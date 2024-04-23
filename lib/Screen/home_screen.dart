@@ -38,6 +38,9 @@ class HomeScreen extends StatelessWidget {
               'Latest Ads',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             //ads tile
             Expanded(
                 child: ListView.builder(
