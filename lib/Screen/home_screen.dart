@@ -52,38 +52,6 @@ class HomeScreen extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => AdvertForm())),
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: _buildButtomNavBar(context),
     );
   }
-}
-
-Widget _buildButtomNavBar(BuildContext context) {
-  return Container(
-    height: 95,
-    decoration: BoxDecoration(
-        color: Colors.grey.shade300,
-        borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(40), topRight: Radius.circular(40))),
-    padding: const EdgeInsets.all(15),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GestureDetector(
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AdvertForm())),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.background,
-              shape: BoxShape.circle,
-            ),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.add),
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-        ),
-      ],
-    ),
-  );
 }
