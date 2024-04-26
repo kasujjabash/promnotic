@@ -15,7 +15,18 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey.shade100,
         title: const Text('Promnotic'),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Icon(
+              Icons.person,
+              size: 30,
+            ),
+          )
+        ],
       ),
+      drawer: const Drawer(),
+      // const MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
@@ -53,8 +64,8 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => AdvertForm())),
+        onPressed: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const AdvertForm())),
         child: const Icon(Icons.add),
       ),
     );

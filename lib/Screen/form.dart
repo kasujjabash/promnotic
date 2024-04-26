@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:promnotic/componets/form_textfield.dart';
 
 class AdvertForm extends StatefulWidget {
-  const AdvertForm({Key? key}) : super(key: key);
+  const AdvertForm({super.key});
 
   @override
   _AdvertFormState createState() => _AdvertFormState();
