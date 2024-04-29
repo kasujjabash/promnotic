@@ -1,14 +1,21 @@
-class Adverts {
+class Advert {
   final String title;
   final String description;
   final String imagePath;
+  final double quantity;
+  final String price;
+  
+
+
   // final String rating;
 
-  Adverts(
+  Advert(
       {required this.title,
       required this.description,
-      // required this.rating,
-      required this.imagePath});
+      required this.quantity,
+      required this.imagePath,
+      required this.price
+      });
 }
 
 //adverts categories

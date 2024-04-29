@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:promnotic/models/ads.dart';
 import '../componets/adverts_tile.dart';
 import '../componets/my_textfield.dart';
+import 'details_page.dart';
 import 'form.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -54,12 +55,24 @@ class HomeScreen extends StatelessWidget {
             ),
             //ads tile
             Expanded(
-                child: ListView.builder(
-                    itemCount: Advertisment().adverts.length,
-                    itemBuilder: (context, index) {
-                      final adverts = Advertisment().adverts[index];
-                      return AdvertsTile(adverts: adverts);
-                    }))
+              child: ListView.builder(
+                itemCount: Advertisment().adverts.length,
+                itemBuilder: (context, index) {
+                  final adverts = Advertisment().adverts[index];
+                  return AdvertsTile(
+                    adverts: adverts,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (contex) => DetailsScreen(
+                          advert: adverts,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

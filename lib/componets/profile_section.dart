@@ -11,28 +11,47 @@ class ProfileSection extends StatelessWidget {
     return Container(
         decoration:
             const BoxDecoration(color: Color.fromARGB(255, 245, 244, 244)),
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            //profile pic
-            Container(
-              padding: const EdgeInsets.all(15),
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  //profile pic
+                  Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset(
+                      imagePath,
+                      height: 60,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    text,
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                ],
               ),
-              child: Image.asset(
-                imagePath,
-                height: 60,
-              ),
-            ),
-            const SizedBox(
-              width: 20,
-            ),
-            Text(
-              text,
-              style: const TextStyle(fontSize: 18),
-            )
-          ],
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: const Text(
+                    'View profile',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              )
+            ],
+          ),
         ));
   }
 }
