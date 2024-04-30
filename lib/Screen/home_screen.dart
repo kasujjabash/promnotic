@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:promnotic/models/ads.dart';
 import '../componets/adverts_tile.dart';
+import '../componets/my_drawer.dart';
 import '../componets/my_textfield.dart';
-import 'details_page.dart';
+import '../pages/details_page.dart';
 import 'form.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,8 +27,7 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      drawer: const Drawer(),
-      // const MyDrawer(),
+      drawer: const MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
