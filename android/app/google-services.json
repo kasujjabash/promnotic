@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "360188355475",
+    "project_id": "promnotic-b9385",
+    "storage_bucket": "promnotic-b9385.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360188355475:android:606ebb079b61458d71fe66",
+        "android_client_info": {
+          "package_name": "com.example.worship_house"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPSqoEydYS8-r0bVmq6a2RA_b6Y-YbhRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
