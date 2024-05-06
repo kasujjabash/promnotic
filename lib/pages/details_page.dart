@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:promnotic/componets/button.dart';
 import 'package:promnotic/models/adverts_model.dart';
 
+import '../Screen/profile.dart';
+
 class DetailsScreen extends StatelessWidget {
   final Advert advert;
   const DetailsScreen({super.key, required this.advert});
@@ -9,7 +11,10 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
+        backgroundColor: Colors.grey.shade200,
+        elevation: 0,
         title: const Text("Details"),
         centerTitle: true,
       ),
@@ -121,7 +126,10 @@ class DetailsScreen extends StatelessWidget {
                       Icons.person_2,
                       color: Colors.white,
                     ),
-                    onTap: () {},
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Profile())),
                   ),
                 ],
               ),

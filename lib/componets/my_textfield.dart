@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
   final String hintText;
+  final TextEditingController controller;
+  final dynamic prefixIcon;
   // final IconData;
-  const MyTextField({super.key, required this.hintText});
+  const MyTextField(
+      {super.key, required this.hintText, required this.controller, required this.prefixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class MyTextField extends StatelessWidget {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            prefixIcon: const Icon(Icons.search),
+            prefixIcon:prefixIcon,
             hintText: hintText),
       ),
     );

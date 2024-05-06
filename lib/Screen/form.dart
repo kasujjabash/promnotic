@@ -84,6 +84,10 @@ class _AdvertFormState extends State<AdvertForm> {
               labelText: 'Title:',
             ),
             FormTextField(
+              controller: descriptionController,
+              labelText: 'Description',
+            ),
+            FormTextField(
               controller: cityController,
               labelText: 'City/Town/Province:',
             ),

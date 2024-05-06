@@ -107,15 +107,7 @@ class MyDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: MenuTile(
-              text: 'Logo out',
-              icon: Icons.logout_outlined,
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MyDeals(),
-                ),
-              ),
-            ),
+                text: 'Logo out', icon: Icons.logout_outlined, onTap: () {}),
           ),
         ],
       ),

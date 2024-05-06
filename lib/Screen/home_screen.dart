@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:promnotic/Screen/profile.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:promnotic/models/ads.dart';
 import '../componets/adverts_tile.dart';
@@ -8,7 +9,8 @@ import '../pages/details_page.dart';
 import 'form.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final searchController = TextEditingController();
+   HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +19,18 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey.shade100,
         title: const Text('Promnotic'),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Icon(
-              Icons.person,
-              size: 30,
-            ),
-          )
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: IconButton(
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Profile())),
+                icon: Icon(
+                  Icons.person,
+                  size: 30,
+                  color: Colors.blue.shade300,
+                ),
+              ))
         ],
       ),
       drawer: const MyDrawer(),
@@ -37,7 +43,9 @@ class HomeScreen extends StatelessWidget {
               height: 20,
             ),
             //search bar
-            const MyTextField(
+             MyTextField(
+              controller: searchController,
+              prefixIcon:  const Icon(Icons.search),
               hintText: 'Search ads',
             ),
             //categories
