@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:promnotic/componets/auth_button.dart';
 import 'package:promnotic/componets/my_textfield.dart';
+import 'package:promnotic/pages/register_page.dart';
 
 import '../componets/neu_box.dart';
 
@@ -10,7 +12,9 @@ class LoginPage extends StatelessWidget {
   final emailController = TextEditingController();
   final passController = TextEditingController();
 
-  LoginPage({super.key});
+  LoginPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +112,7 @@ class LoginPage extends StatelessWidget {
                       children: [
                         //googl icon //todo add a google icon here
                         NeuBox(
-                          socialIcon: 'lib/images/Facebook.png',
+                          socialIcon: 'lib/images/google_logo.png',
                         ),
                         //facebook icon
                         NeuBox(
@@ -127,19 +131,33 @@ class LoginPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 100),
                   child: Column(
                     children: [
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           //you don't have an account, register
-                          Text("You don't have an account?"),
+                          const Text("You don't have an account?"),
                           //Sized box
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           //Register
-                          Text(
-                            "Register",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          GestureDetector(
+                            //!ontap
+                            onTap: () {
+                              //pop
+                              Navigator.pop(context);
+                              // go to the next page 
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => RegisterPage(),
+                                ),
+                              );
+                            }, //? Toggle to register page when tapped
+                            child: const Text(
+                              "Register",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           )
                         ],
                       ),

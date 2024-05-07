@@ -54,7 +54,9 @@ class IntroScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginPage(),
+                    builder: (context) => LoginPage(
+                      
+                    ),
                   ),
                 );
               },
@@ -74,7 +76,9 @@ class IntroScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => RegisterPage(),
+                    builder: (context) => RegisterPage(
+                     
+                    ),
                   ),
                 );
               },

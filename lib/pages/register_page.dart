@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:promnotic/componets/auth_button.dart';
 import 'package:promnotic/componets/my_textfield.dart';
+import 'package:promnotic/pages/login_or_register.dart';
+import 'package:promnotic/pages/login_page.dart';
 
 import '../componets/neu_box.dart';
 
@@ -11,9 +14,9 @@ class RegisterPage extends StatelessWidget {
   final passworsController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
-  //register
-
-  RegisterPage({super.key});
+  RegisterPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +136,7 @@ class RegisterPage extends StatelessWidget {
                       children: [
                         //googl icon //todo add a google icon here
                         NeuBox(
-                          socialIcon: 'lib/images/Facebook.png',
+                          socialIcon: 'lib/images/google_logo.png',
                         ),
                         //facebook icon
                         NeuBox(
@@ -150,19 +153,33 @@ class RegisterPage extends StatelessWidget {
                 //you don't have an account, register + the Login button
                 Column(
                   children: [
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         //you don't have an account, register
-                        Text("You already have an account?"),
+                        const Text("You already have an account?"),
                         //Sized box
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         //Register
-                        Text(
-                          "Login",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                        GestureDetector(
+                          //! ontap
+                          onTap: () {
+                            //pop
+                            Navigator.pop(context);
+                            // go to the next page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         )
                       ],
                     ),

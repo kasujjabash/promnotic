@@ -10,25 +10,18 @@
 // }
 
 // class _LoginOrRegisterState extends State<LoginOrRegister> {
-//   //bool
-//   bool? isLoginPage;
-//   //toggle menthod to switch between login and registerscreen
-//   void tooglePages() {
+//   bool isLoginPage = true;
+
+//   void togglePages() {
 //     setState(() {
-//       isLoginPage != isLoginPage;
+//       isLoginPage = !isLoginPage;
 //     });
 //   }
 
 //   @override
 //   Widget build(BuildContext context) {
-//     if (isLoginPage != isLoginPage) {
-//       return LoginPage(
-//         onTap: tooglePages,
-//       );
-//     } else {
-//       return RegisterPage(
-//         onTap: tooglePages,
-//       );
-//     }
+//     return isLoginPage 
+//       ? LoginPage(toggleToRegister: togglePages) 
+//       : RegisterPage(toggleToLogin: togglePages);
 //   }
 // }
