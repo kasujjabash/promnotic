@@ -16,28 +16,30 @@ class Profile extends StatelessWidget {
         backgroundColor: Colors.blue.shade900,
         foregroundColor: Colors.white,
       ),
-      body: const Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          //hero profile
-          HeroSection(),
-          //sized box
-          SizedBox(
-            height: 20,
-          ),
-          //User Email
-          ProfileDetails(
-            name: 'Email',
-            iconData: Icons.email,
-            text: 'Bashir@gmail.com',
-          ),
-          //Phone number
-          ProfileDetails(
-            name: 'Phone number',
-            iconData: Icons.phone,
-            text: '+256707268485',
-          )
-        ],
+      body: const SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //hero profile
+            HeroSection(),
+            //sized box
+            SizedBox(
+              height: 20,
+            ),
+            //User Email
+            ProfileDetails(
+              name: 'Email',
+              iconData: Icons.email,
+              text: 'Bashir@gmail.com',
+            ),
+            //Phone number
+            ProfileDetails(
+              name: 'Phone number',
+              iconData: Icons.phone,
+              text: '+256707268485',
+            )
+          ],
+        ),
       ),
     );
   }

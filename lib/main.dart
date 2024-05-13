@@ -14,14 +14,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Promnotic',
-        theme: ThemeData(colorScheme: const ColorScheme.light()
-            // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            // useMaterial3: true,
-            ),
-        home: const IntroScreen()
-        // HomeScreen(),
-        );
+      debugShowCheckedModeBanner: false,
+      title: 'Promnotic',
+      theme: ThemeData(colorScheme: const ColorScheme.light()
+          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          // useMaterial3: true,
+          ),
+      home:
+          //  const IntroScreen()
+          HomeScreen(),
+    );
   }
 }
