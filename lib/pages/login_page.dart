@@ -1,20 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'package:promnotic/componets/auth_button.dart';
 import 'package:promnotic/componets/my_textfield.dart';
+import 'package:promnotic/pages/auth/auth_service.dart';
 import 'package:promnotic/pages/register_page.dart';
+import 'package:provider/provider.dart';
 
 import '../componets/neu_box.dart';
 
-class LoginPage extends StatelessWidget {
-  // email and password controllers
-  final emailController = TextEditingController();
-  final passController = TextEditingController();
-
-  LoginPage({
+class LoginPage extends StatefulWidget {
+  const LoginPage({
     super.key,
   });
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  // email and password controllers
+  final emailController = TextEditingController();
+
+  final passController = TextEditingController();
+
+//sign in methode
+  void signUserIn() async {
+    //? get the auth service
+    final authService = Provider.of<AuthService>(context, listen: false);
+    try {
+      await authService.signInWithEmailAndPassword(
+          emailController.text, passController.text);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString()))
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +166,7 @@ class LoginPage extends StatelessWidget {
                             onTap: () {
                               //pop
                               Navigator.pop(context);
-                              // go to the next page 
+                              // go to the next page
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -166,7 +186,7 @@ class LoginPage extends StatelessWidget {
                         width: 10,
                       ),
                       //Login button
-                      AuthButton(buttonText: 'Login', onTap: () {}),
+                      AuthButton(buttonText: 'Login', onTap: signUserIn),
                     ],
                   ),
                 )

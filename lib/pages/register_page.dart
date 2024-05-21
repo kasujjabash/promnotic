@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:promnotic/componets/auth_button.dart';
 import 'package:promnotic/componets/my_textfield.dart';
-import 'package:promnotic/pages/login_or_register.dart';
 import 'package:promnotic/pages/login_page.dart';
-
 import '../componets/neu_box.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -172,7 +169,7 @@ class RegisterPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoginPage(),
+                                builder: (context) => const LoginPage(),
                               ),
                             );
                           },
